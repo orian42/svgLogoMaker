@@ -1,7 +1,6 @@
 //add required processes
 const fs = require('fs');
 const inquirer = require('inquirer');
-const shapes = require('./lib/shapes.js');
 
 //create logo class
 class Logo {
