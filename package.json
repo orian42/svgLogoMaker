@@ -1,0 +1,26 @@
+{
+  "name": "svglogomaker",
+  "version": "1.0.0",
+  "description": "generates a custom svp logo",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orian42/svgLogoMaker.git"
+  },
+  "author": "Jason Ryan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orian42/svgLogoMaker/issues"
+  },
+  "homepage": "https://github.com/orian42/svgLogoMaker#readme",
+  "dependencies": {
+    "inquirer": "^9.2.23",
+    "jest": "^29.7.0"
+  }
+}
