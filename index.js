@@ -10,7 +10,12 @@ const questions = [
             {
                 type: "input",
                 message: "What text of up to three letters will be on your logo?",
-                name: "logoText"
+                name: "logoText",
+                validate: function (logoText) {
+                    if (logoText.length < 4) {
+                        return true;} else {console.log(`\nPlease enter no more than three characters\n`)
+                    }
+                }
             },
             {
                 type: "input",
