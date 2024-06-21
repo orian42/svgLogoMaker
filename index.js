@@ -1,16 +1,7 @@
 //add required processes
 const fs = require('fs');
 const inquirer = require('inquirer');
-
-//create logo class
-class Logo {
-    constructor(logoText, textColor, logoShape, shapeColor) {
-        this.logoText = logoText;
-        this.textColor = textColor;
-        this.logoShape = logoShape;
-        this.shapeColor = shapeColor;
-    }
-}
+const shapes = require('./lib/shapes.js');
 
 //create series of prompts for user to enter options for the logo
 const questions = [
@@ -38,9 +29,9 @@ const questions = [
                 name: "shapeColor"
             }
         ])
-        .then((response) => {
+        .then((res) => {
             //create new logo object based on user input
-            // writeToFile("./examples/logo.svg", ?????function?????(response));   <-----------------------------------------------------------
+            writeToFile("./examples/logo.svg", shapes.renderLogo(res));
         }
         )
 ]
