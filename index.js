@@ -1,19 +1,20 @@
-//add required processes
+//Required processes defined here
 const fs = require('fs');
 const inquirer = require('inquirer');
 const shapes = require('./lib/shapes.js');
 
-//create series of prompts for user to enter options for the logo
+//Creates a series of prompts for user to enter options for the logo then calls a function to render the logo
 const questions = [
     inquirer
         .prompt([
             {
                 type: "input",
-                message: "What text of up to three letters will be on your logo?",
+                message: "Using no more than three (3) characters, what text will be on your logo?",
                 name: "logoText",
+                //Validation added to ensure only three characters are used
                 validate: function (logoText) {
                     if (logoText.length < 4) {
-                        return true;} else {console.log(`\nPlease enter no more than three characters\n`)
+                        return true;} else {console.log(`\n\nPlease enter no more than three characters\n`)
                     }
                 }
             },
@@ -35,13 +36,13 @@ const questions = [
             }
         ])
         .then((res) => {
-            //create new logo object based on user input
+            //The below function called to create new logo object based on user input
             writeToFile("./examples/logo.svg", shapes.renderLogo(res));
         }
         )
 ]
 
-//write svp information to a file
+//This function writes the svp information to a file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
         err ? console.error("An error has occurred.", err) : console.log(`Generated logo.svg`)
